@@ -23,7 +23,7 @@
     {# TODO: <link rel="stylesheet" href="{{ MEDIA_URL }}css/projectname.css?v=1" /> #}
     {% block css %}{% endblock %}
 
-    <script src="{{ MEDIA_URL }}js/modernizr-1.6.min.js"></script>
+    <script src="{{ MEDIA_URL }}js/modernizr-1.7.min.js"></script>
 </head>
 
 <body class="{% block body_class %}{% endblock %}">
@@ -48,8 +48,8 @@
 
     {% if debug %}{% include 'includes/debug.html' %}{% endif %}
     {% block javascript_library %}
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
-    <script>!window.jQuery && document.write(unescape('%3Cscript src="{{ MEDIA_URL }}js/jquery-1.5.min.js"%3E%3C/script%3E'))</script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+    <script>!window.jQuery && document.write(unescape('%3Cscript src="{{ MEDIA_URL }}js/jquery-1.5.1.min.js"%3E%3C/script%3E'))</script>
     {% endblock %}
     {% block javascript %}{% endblock %}
 
