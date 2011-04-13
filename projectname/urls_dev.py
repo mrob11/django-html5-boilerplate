@@ -5,6 +5,6 @@ from urls import urlpatterns
 
 
 urlpatterns += patterns('',
-    (r'^media/(.*)$', 'django.views.static.serve', {'document_root':
+    (r'^static/(.*)$', 'django.views.static.serve', {'document_root':
         settings.MEDIA_ROOT}),
     )
