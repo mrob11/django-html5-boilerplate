@@ -22,14 +22,15 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': '',                           # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': '',                             # Or path to database file if using sqlite3.
-        'USER': '',                             # Not used with sqlite3.
-        'PASSWORD': '',                         # Not used with sqlite3.
-        'HOST': '',                             # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '',                             # Set to empty string for default. Not used with sqlite3.
+        'ENGINE': 'django.db.backends.', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': '',                      # Or path to database file if using sqlite3.
+        'USER': '',                      # Not used with sqlite3.
+        'PASSWORD': '',                  # Not used with sqlite3.
+        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
+        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
     }
 }
+
 
 TIME_ZONE = 'Canada/Eastern'
 
@@ -37,11 +38,16 @@ ROOT_URLCONF = 'urls_dev' #TODO: remove this on production
 
 INTERNAL_IPS = ('127.0.0.1', )
 
-# TODO: MEDIA_URL needs to be a full URL on production
-# in case some media (images) are embedded in another site
+# URL that handles the media served from MEDIA_ROOT. Make sure to use a
+# trailing slash.
+# Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
 MEDIA_URL = '/media/' #TODO: on production (full URL to the media server)
 
-ADMIN_MEDIA_PREFIX = MEDIA_URL + 'admin/'
+# URL prefix for static files.
+# Example: "http://media.lawrence.com/static/"
+STATIC_URL = '/static/'
+
+ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
 
 # Allows for certain Django apps to be installed on a local basis,
 # independent of INSTALLED_APPS in the main settings.py file.
