@@ -29,6 +29,7 @@ MEDIA_ROOT = os.path.join(PROJECT_PATH, 'media/')
 STATIC_ROOT = os.path.join(PROJECT_PATH, 'static/')
 
 STATICFILES_DIRS = (
+    os.path.join(PROJECT_PATH, 'assets/'),
 )
 
 STATICFILES_FINDERS = (
