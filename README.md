@@ -5,6 +5,12 @@
 This is a starting template for Django website projects using (a slightly modified version of)
 [HTML5 Boilerplate](http://html5boilerplate.com).
 
+As of version 0.3 I've migrated to the `virtualenv` way of working with Python projects. If you're unfamiliar, I've found some good reads here:
+
+* http://jmoiron.net/blog/deploying-django-mod-wsgi-virtualenv/
+* http://www.clemesha.org/blog/modern-python-hacker-tools-virtualenv-fabric-pip
+* http://mathematism.com/2009/07/30/presentation-pip-and-virtualenv/
+
 
 ## Features
 
@@ -16,55 +22,36 @@ This is a starting template for Django website projects using (a slightly modifi
 * Included the [960 grid system](http://960.gs), both 12 and 24 column versions. 24 column is integrated with base template.
 
 
-## HTML5 Boilerplate Modifications
-
-Following are the modifications I've made from the original HTML5 Boilerplate (v0.9.5).
-Some modifications are for Django-specific reasons, others are just personal preference.
-
-* Removed the profiling JavaScript code (since I don't often make use of it)
-* Removed the `plugins.js` and `scripts.js` file and replaced with `projectname.js`.
-* I've included the `crossdomain.xml` file for Flash but serving it needs to be configured. I don't work with Flash so haven't bothered.
-* Removed `nginx.conf` and `web.config` since I run Apache for my production environment.
-* Removed `.htaccess` from the template only. I include it in my production environment deployment though.
-* Renamed the `style.css` file to `reset.css` since that's essentially how I'm treating it - as a CSS reset. For readability/navigability in development I'd rather have it in a separate file.
-
-
 ## How to use the template
 
-This template assumes that your 3rd party, project-specific application code will reside in the `src/` folder. You would then place symbolic links to the app code in the `lib/` folder. 
-It will still work with code living elsewhere on your `PYTHONPATH` but the idea is that your development environment shouldn't be tied to a specific version of Django (or any other app for that matter).
-This setup allows you to have project-specific versions of 3rd party code included in the project's repository.
+Using `pip` and `virtualenv` make it a lot easier to set up a new project using this boilerplate. A handy dandy requirements.txt file is included, 
+so when you've downloaded a copy of this boilerplate, just run `pip install -r requirements.txt` from the project directory and away you go.
 
-1. Download a copy of the django-html5-boilerplate template to your development environment
-1. Download a copy of the Django framework and place it in the `src/` folder.
-1. Place a symlink to the Django app folder in your `lib/` folder.
-    
-        cd <path_to_project>/lib
-        ln -sf ../src/<django_folder_name>/django
-        
-1. Set your PYTHONPATH environment variable
+I've included a few of the Django apps I often use in the requirements file:
 
-        export PYTHONPATH=.:..:../lib/:$PYTHONPATH
+* Django==1.3
+* Fabric==1.0.1
+* PIL==1.1.7
+* South==0.7.3
+* paramiko==1.7.6
+* psycopg2==2.4.1
+* pycrypto==2.3
+* wsgiref==0.1.2
 
-1. Follow the rest of this script:
-    
+When you're finished installing requirements, you'll need to set up your settings\_local.py file:
+
         # set path
         cd <path-to-project>/
         
         # Rename the project folder 
         mv projectname <project_name>
-
+        
         # copy settings_local.py
         cp settings_local.py.ex settings_local.py
-
+        
         # Edit settings_local.py
         vi settings_local.py
-
-        # Run the tests. Make sure they all pass
-        ./test_all.py
-    
-        # start dev server
-        ./manage.py runserver 0:8000
+        
 
 
 
