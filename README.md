@@ -15,28 +15,16 @@ As of version 0.3 I've migrated to the `virtualenv` way of working with Python p
 ## Features
 
 * A Django project skeleton
-* A slightly modified version of the HTML5 Boilerplate
+* A <span style="text-decoration: line-through">slightly</span> now less modified version of the HTML5 Boilerplate
 * django.contrib.staticfiles url conf set up for serving static media
 * A `settings_local.py.ex` template file that allows you to set environment-specific settings
 * A `test_all.py` script that allows you to run the unit tests for all applications in INSTALLED_APPS
-* Included the [960 grid system](http://960.gs), both 12 and 24 column versions. 24 column is integrated with base template.
 
 
 ## How to use the template
 
 Using `pip` and `virtualenv` make it a lot easier to set up a new project using this boilerplate. A handy dandy requirements.txt file is included, 
 so when you've downloaded a copy of this boilerplate, just run `pip install -r requirements.txt` from the project directory and away you go.
-
-I've included a few of the Django apps I often use in the requirements file:
-
-* Django==1.3
-* Fabric==1.0.1
-* PIL==1.1.7
-* South==0.7.3
-* paramiko==1.7.6
-* psycopg2==2.4.1
-* pycrypto==2.3
-* wsgiref==0.1.2
 
 When you're finished installing requirements, you'll need to set up your settings\_local.py file:
 
