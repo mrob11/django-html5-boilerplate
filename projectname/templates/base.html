@@ -1,57 +1,54 @@
-<!DOCTYPE html>
+<!doctype html>
 {% load i18n %}
-<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
-<!--[if IE 7 ]>    <html class="no-js ie7" lang="en"> <![endif]-->
-<!--[if IE 8 ]>    <html class="no-js ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
-
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
 <head>
     <meta charset="utf-8" />
     <title>{% block page_title %}{% trans "Project Name" %}{% endblock %}</title>
-
+    
     <meta name="description" content="{% block meta_description %}{% endblock %}" />
     <meta name="author" content="{% block meta_author %}{% endblock %}" />
     <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;" />
-
+    
     {# TODO: <link rel="shortcut icon" href="{{ STATIC_URL }}images/favicon.ico" /> #}
     {# TODO: <link rel="apple-touch-icon" href="{{ STATIC_URL }}images/apple-touch-icon.png" /> #}
-    <link rel="stylesheet" href="{{ STATIC_URL }}css/reset.css?v=1" />
-    <link rel="stylesheet" media="handheld" href="{{ STATIC_URL }}css/handheld.css?v=1" />
-    <link rel="stylesheet" href="{{ STATIC_URL }}css/960_24_col.css?v=1" />
-    {# TODO: <link rel="stylesheet" href="{{ STATIC_URL }}css/projectname.css?v=1" /> #}
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/style.css?v=2" />
     {% block css %}{% endblock %}
-
-    <script src="{{ STATIC_URL }}js/modernizr-1.7.min.js"></script>
+    {% endcompress %}
+    
+    <script src="{{ STATIC_URL }}js/modernizr-2.0.js"></script>
 </head>
 
 <body class="{% block body_class %}{% endblock %}">
 {% block body %}
-    <div id="container" class="container_24">
+    <div id="container">
         <header>
-
+            
         </header>
-    
-        <div id="main">
+        
+        <div id="main" role="main">
             {% block content %}{% endblock %}
         </div>
-    
+        
         <footer>
-
+            
         </footer>
     </div> <!-- end of #container -->
-
-    <!--[if lt IE 7 ]>
-      <script src="{{ STATIC_URL }}js/dd_belatedpng.js?v=1"></script>
-    <![endif]-->
-
+    
+    
     {% if debug %}{% include 'includes/debug.html' %}{% endif %}
     {% block javascript_library %}
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
-    <script>!window.jQuery && document.write(unescape('%3Cscript src="{{ STATIC_URL }}js/jquery-1.5.2.min.js"%3E%3C/script%3E'))</script>
+    <script src="//http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+    <script>!window.jQuery && document.write(unescape('%3Cscript src="{{ STATIC_URL }}js/jquery-1.6.1.min.js"%3E%3C/script%3E'))</script>
     {% endblock %}
     {% block javascript %}{% endblock %}
-
+    <!--[if lt IE 7 ]>
+    <script src="{{ STATIC_URL }}js/dd_belatedpng.js"></script>
+    <script> DD_belatedPNG.fix('img, .png_bg');</script>
+    <![endif]-->
 {% endblock %}
-
 </body>
 </html>
