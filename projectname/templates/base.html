@@ -1,12 +1,12 @@
 <!doctype html>
 {% load i18n %}
-<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
-<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
-<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
-<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
     <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <title>{% block page_title %}{% trans "Project Name" %}{% endblock %}</title>
     
     <meta name="description" content="{% block meta_description %}{% endblock %}" />
@@ -15,10 +15,10 @@
     
     {# TODO: <link rel="shortcut icon" href="{{ STATIC_URL }}images/favicon.ico" /> #}
     {# TODO: <link rel="apple-touch-icon" href="{{ STATIC_URL }}images/apple-touch-icon.png" /> #}
-    <link rel="stylesheet" href="{{ STATIC_URL }}css/style.css?v=2" />
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/style.css" />
     {% block css %}{% endblock %}
     
-    <script src="{{ STATIC_URL }}js/modernizr-2.0.js"></script>
+    <script src="{{ STATIC_URL }}js/modernizr-2.0.6.min.js"></script>
 </head>
 
 <body class="{% block body_class %}{% endblock %}">
@@ -40,13 +40,24 @@
     
     {% if debug %}{% include 'includes/debug.html' %}{% endif %}
     {% block javascript_library %}
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
-    <script>!window.jQuery && document.write(unescape('%3Cscript src="{{ STATIC_URL }}js/jquery.1.6.1.min.js"%3E%3C/script%3E'))</script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="{{ STATIC_URL }}js/jquery-1.6.2.min.js"><\/script>')</script>
+    <script defer src="{{ STATIC_URL }}js/plugins.js"></script>
+    <script defer src="{{ STATIC_URL }}js/script.js"></script>
+
     {% endblock %}
     {% block javascript %}{% endblock %}
+
+    <script> // Change UA-XXXXX-X to be your site's ID
+    window._gaq = [['_setAccount','UAXXXXXXXX1'],['_trackPageview'],['_trackPageLoadTime']];
+    Modernizr.load({
+      load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
+    });
+    </script>
+
     <!--[if lt IE 7 ]>
-    <script src="{{ STATIC_URL }}js/dd_belatedpng.js"></script>
-    <script> DD_belatedPNG.fix('img, .png_bg');</script>
+        <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+        <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
     <![endif]-->
 {% endblock %}
 </body>
