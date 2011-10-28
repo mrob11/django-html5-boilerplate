@@ -1,0 +1,9 @@
+Django==1.3.1
+Fabric==1.3.1
+PIL==1.1.7
+South==0.7.3
+django-admin-tools==0.4.0
+django-debug-toolbar==0.8.5
+pycrypto==2.3
+ssh==1.7.8
+wsgiref==0.1.2
