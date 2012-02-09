@@ -13,7 +13,6 @@ This is a starting template for Django website projects using (a slightly modifi
 * A <span style="text-decoration: line-through">slightly</span> now less modified version of the HTML5 Boilerplate
 * django.contrib.staticfiles url conf set up for serving static media
 * A `settings_local.py.ex` template file that allows you to set environment-specific settings
-* A `test_all.py` script that allows you to run the unit tests for all applications in INSTALLED_APPS
 * Requirements files for pip (details below)
 
 
@@ -21,9 +20,11 @@ This is a starting template for Django website projects using (a slightly modifi
 
 Using `pip` and `virtualenv` makes it a lot easier to set up a new project using this boilerplate. If you're unfamiliar with virtualenv, I've found a [few](http://jmoiron.net/blog/deploying-django-mod-wsgi-virtualenv/) [good](http://www.clemesha.org/blog/modern-python-hacker-tools-virtualenv-fabric-pip) [reads](http://mathematism.com/2009/07/30/presentation-pip-and-virtualenv/) explaining the concept.
 
-Start by creating your virtual environment (I'm using [Doug Hellman's virtualenvwrapper](http://www.doughellmann.com/projects/virtualenvwrapper/)), by the way:
+Start by creating your virtual environment (I'm using [Doug Hellman's virtualenvwrapper](http://www.doughellmann.com/projects/virtualenvwrapper/)):
 
-        mkvirtualenv projectname --no-site-packages
+        mkvirtualenv projectname
+
+Replace 'projectname' with your desired environment name.
 
 I've included two separate requirements files: 
 
@@ -62,3 +63,6 @@ Once that's completed you can boot up the dev server:
 Then open up your browser and go to [http://127.0.0.1:8000](http://127.0.0.1:8000) -- if all went well you should see the "It works!" page.
 
 
+## A note about humans and robots
+
+HTML5 Boilerplate includes humans.txt and robots.txt files. I had thought about including a method for serving those files with this project but decided that the most appropriate way to do so was not through Django but through your web server (be it, Apache, nginx or what have you). They are included for your convenience in the `config/` folder, but it's up to you to ensure that they're served properly.
