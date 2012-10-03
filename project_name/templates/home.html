@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block body_class %}{{ block.super }} home{% endblock %}
+
+{% block content %}
+    <!-- Add your site or application content here -->
+    <p>{% trans "Hello world! This is Django HTML5 Boilerplate." %}</p>
+    <p>{% trans "Edit 'templates/home.html' to modify this content." %}</p>
+{% endblock %}
