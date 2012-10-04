@@ -2,19 +2,7 @@
 
 ## Introduction
 
-This is a starting template for Django website projects using (a slightly modified version of)
-[HTML5 Boilerplate](http://html5boilerplate.com).
-
-
-
-## Features
-
-* A Django project skeleton
-* A <span style="text-decoration: line-through">slightly</span> now less modified version of the HTML5 Boilerplate
-* django.contrib.staticfiles url conf set up for serving static media
-* A `settings_local.py.ex` template file that allows you to set environment-specific settings
-* Requirements files for pip (details below)
-
+This is a starting template for Django website projects with [HTML5 Boilerplate](http://html5boilerplate.com) integrated.
 
 ## How to use the template
 
@@ -22,47 +10,70 @@ Using `pip` and `virtualenv` makes it a lot easier to set up a new project using
 
 Start by creating your virtual environment (I'm using [Doug Hellman's virtualenvwrapper](http://www.doughellmann.com/projects/virtualenvwrapper/)):
 
-        mkvirtualenv projectname
+```
+mkvirtualenv projectname
+```
 
 Replace 'projectname' with your desired environment name.
 
-I've included two separate requirements files: 
+Install Django from the `requirements.pip` file:
 
-* `requirements_min.txt` contains the minimum requirements to get this up and running
-* `requirements_plus.txt` contains a few extra Python packages that I use in most of my projects (South, PIL, etc.)
+```
+pip install -r requirements.pip
+```
 
+When you're finished installing requirements, create a new project using the `startproject` command with the --template argument:
 
-Install one of the requirements files:
+```
+django-admin.py startproject <project_name> --template=https://github.com/mike360/django-html5-boilerplate/tarball/master
+```
 
-        pip install -r <requirements_min.txt or requirements_plus.txt>
+After creating the project you can boot up the development server right away:
 
+```
+python manage.py runserver
+```                
 
-When you're finished installing requirements, you'll need to set up your settings\_local.py file:
+Then open up your browser and go to [http://127.0.0.1:8000](http://127.0.0.1:8000) -- if all went well you should see the "Hello world!" page.
 
-        # set path
-        cd <path-to-project>/
-        
-        # Rename the project folder 
-        mv projectname <project_name>
-        
-        # copy settings_local.py
-        cp settings_local.py.ex settings_local.py
-        
-        # Edit settings_local.py
-        vim settings_local.py
-        
+Now you'll need to configure your database. Open up `settings/dev.py` and configure your local settings (database, etc.) I go into more detail about the way settings are handled in the Settings Module 
 
-After you configure your local settings (database, etc.) you're ready to run `syncdb`:
+```python
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': '',                      # Or path to database file if using sqlite3.
+        # The following settings are not used with sqlite3:
+        'USER': '',
+        'PASSWORD': '',
+        'HOST': '',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
+        'PORT': '',                      # Set to empty string for default.
+    }
+}
+```
 
-        python manage.py syncdb
+Now you're ready to run `syncdb`. This will set up your database, and since the Django Admin is included by default in this template, you'll go through the initial super user setup.
 
-Once that's completed you can boot up the dev server:
+```
+python manage.py syncdb
+```
 
-        python manage.py runserver
+Once that's completed you can boot up the dev server again:
 
-Then open up your browser and go to [http://127.0.0.1:8000](http://127.0.0.1:8000) -- if all went well you should see the "It works!" page.
+```
+python manage.py runserver
+```
 
+The Django Admin is automatically included with this project, so now you can head to [http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/) and log in using the credentials you created in the `syncdb` step.
 
-## A note about humans and robots
+* * * 
 
-HTML5 Boilerplate includes humans.txt and robots.txt files. I had thought about including a method for serving those files with this project but decided that the most appropriate way to do so was not through Django but through your web server (be it, Apache, nginx or what have you). They are included for your convenience in the `config/` folder, but it's up to you to ensure that they're served properly.
+## The Settings Module
+
+After some reading and tinkering, I've abandoned the old `settings_local.py` file that was ignored in the repo in past versions of django-html5-boilerplate. Too many things can go wrong when your settings aren't version controlled. This new way of handling settings is much more manageable in my opinion, and in the opinion of [a](http://lincolnloop.com/django-best-practices/projects.html#settings) [few](http://rdegges.com/the-perfect-django-settings-file) [others](http://ericholscher.com/blog/2011/jan/10/handling-django-settings-files/). I've based the settings module after the opinions found in those links, with some tweaks of my own.
+
+In this new settings module, all settings are stored and versioned under the `settings/` folder in the root of the project folder. All of the global and common settings are stored in `settings/base.py` and anything environment specific should be in a separate file that imports from base. There is a `settings/dev.py` file included, and it is the default `DJANGO_SETTINGS_MODULE` as specified in the `wsgi.py` file.
+
+A template for subsequent environments (e.g. staging, production) is included in `settings/environment.py.ex`. In order to make use of those files you'll need to override the `DJANGO_SETTINGS_MODULE` environment variable set in `wsgi.py` and `manage.py` in your specific server environment. This is handled in various ways depending on your environment. It is a good practice to keep the other environments' settings files versioned as well.
+
+This method of handling settings is great for the solo developer who needs to manage multiple deployment environments. It's ready out of the box to run well this way. When a project has multiple developers, each developer should maintain their own local settings file and exclude it from source control. This template can handle that with a couple of tweaks.
