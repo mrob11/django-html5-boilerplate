@@ -16,10 +16,10 @@ mkvirtualenv projectname
 
 Replace 'projectname' with your desired environment name.
 
-Install Django from the `requirements.pip` file:
+Install Django:
 
 ```
-pip install -r requirements.pip
+pip install Django
 ```
 
 When you're finished installing requirements, create a new project using the `startproject` command with the --template argument:
