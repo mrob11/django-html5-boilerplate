@@ -28,6 +28,13 @@ When you're finished installing Django, create a new project using the `startpro
 django-admin.py startproject <project_name> --template=https://github.com/mike360/django-html5-boilerplate/tarball/master
 ```
 
+The above command will work, but GitHub's automatic tarballing of a repository is going to cause the project to be created in an ugly subfolder. To avoid that, you can clone a copy of this repo and then pass the path of the cloned repo to `startproject`:
+
+```
+git clone https://github.com/mike360/django-html5-boilerplate/
+django-admin.py startproject <project_name> --template=django-html5-boilerplate/
+```  
+
 After creating the project you can boot up the development server right away:
 
 ```
