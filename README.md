@@ -22,7 +22,7 @@ Install Django:
 pip install Django
 ```
 
-When you're finished installing requirements, create a new project using the `startproject` command with the --template argument:
+When you're finished installing Django, create a new project using the `startproject` command with the --template argument:
 
 ```
 django-admin.py startproject <project_name> --template=https://github.com/mike360/django-html5-boilerplate/tarball/master
