@@ -22,18 +22,11 @@ Install Django:
 pip install Django
 ```
 
-When you're finished installing Django, create a new project using the `startproject` command with the --template argument:
+When you're finished installing Django, create a new project using the `startproject` command with the --template argument (replace project_name with your project's name):
 
 ```
-django-admin.py startproject <project_name> --template=https://github.com/mike360/django-html5-boilerplate/tarball/master
+django-admin.py startproject --template=https://github.com/mike360/django-html5-boilerplate/zipball/master project_name
 ```
-
-The above command will work, but GitHub's automatic tarballing of a repository is going to cause the project to be created in an ugly subfolder. To avoid that, you can clone a copy of this repo and then pass the path of the cloned repo to `startproject`:
-
-```
-git clone https://github.com/mike360/django-html5-boilerplate/
-django-admin.py startproject <project_name> --template=django-html5-boilerplate/
-```  
 
 After creating the project you can boot up the development server right away:
 
@@ -72,8 +65,6 @@ python manage.py runserver
 ```
 
 The Django Admin is automatically included with this project, so now you can head to [http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/) and log in using the credentials you created in the `syncdb` step.
-
-* * * 
 
 ## The Settings Module
 
