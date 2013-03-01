@@ -36,3 +36,7 @@ MEDIA_URL = '/media/'
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
 STATIC_URL = '/static/'
+
+# Overwrite default ROOT_URLCONF to include static file serving by Django.
+# In production, this should be handled separately by your webserver or CDN.
+ROOT_URLCONF = '{{ project_name }}.urls.dev'
