@@ -16,7 +16,7 @@
         <link rel="stylesheet" href="{{ STATIC_URL }}css/main.css" />
         {% block css %}{% endblock %}
         
-        <script src="{{ STATIC_URL }}js/vendor/modernizr-2.6.1.min.js"></script>
+        <script src="{{ STATIC_URL }}js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
 
     <body class="{% block body_class %}{% endblock %}">
@@ -29,8 +29,8 @@
         {% endblock content %}
 
         {% block javascript_library %}
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="{{ STATIC_URL }}js/vendor/jquery-1.8.0.min.js"><\/script>')</script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="{{ STATIC_URL }}js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
         <script src="{{ STATIC_URL }}js/plugins.js"></script>
         <script src="{{ STATIC_URL }}js/main.js"></script>
         {% endblock javascript_library %}
