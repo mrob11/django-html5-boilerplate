@@ -1,3 +1,5 @@
+{% comment %}
+
 # Django HTML5 Boilerplate
 
 ## Introduction
@@ -75,3 +77,8 @@ In this new settings module, all settings are stored and versioned under the `se
 A template for subsequent environments (e.g. staging, production) is included in `settings/environment.py.ex`. In order to make use of those files you'll need to override the `DJANGO_SETTINGS_MODULE` environment variable set in `wsgi.py` and `manage.py` in your specific server environment. This is handled in various ways depending on your environment. It is a good practice to keep the other environments' settings files versioned as well.
 
 This method of handling settings is great for the solo developer who needs to manage multiple deployment environments. It's ready out of the box to run well this way. When a project has multiple developers, each developer should maintain their own local settings file and exclude it from source control. This template can handle that with a couple of tweaks.
+
+<!--
+{% endcomment %}
+# {{ project_name }} README
+{# --> #}
