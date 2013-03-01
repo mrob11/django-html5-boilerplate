@@ -25,7 +25,7 @@ pip install Django
 When you're finished installing Django, create a new project using the `startproject` command with the --template argument (replace project_name with your project's name):
 
 ```
-django-admin.py startproject --template=https://github.com/mike360/django-html5-boilerplate/zipball/master project_name
+django-admin.py startproject --extension=html,py,ex,md --template=https://github.com/mike360/django-html5-boilerplate/zipball/master project_name
 ```
 
 After creating the project you can boot up the development server right away:
