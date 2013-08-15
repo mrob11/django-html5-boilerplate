@@ -4,7 +4,7 @@
 Django HTML5 Boilerplate
 ========================
 
-This is a starting template for Django website projects with [HTML5 Boilerplate](http://html5boilerplate.com) integrated. To get started, create a ``virtualenv``, install Django, and then use Django's ``startproject`` command and specify the template (replace project_name with the name of your project) ::
+This is a starting template for Django website projects with `HTML5 Boilerplate <http://html5boilerplate.com>`__ integrated. To get started, create a ``virtualenv``, install Django, and then use Django's ``startproject`` command and specify the template (replace project_name with the name of your project) ::
 
     virtualenv project_name
     source project_name/bin/activate
