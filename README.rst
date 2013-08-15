@@ -44,5 +44,5 @@ To bootstrap the project::
     source {{ project_name }}/bin/activate
     cd path/to/{{ project_name }}/repository
     pip install -r requirements.txt
-    manage.py syncdb --migrate
+    manage.py syncdb
 
