@@ -4,6 +4,10 @@
 Django HTML5 Boilerplate
 ========================
 
+.. image:: https://d2weczhvl823v0.cloudfront.net/mike360/django-html5-boilerplate/trend.png
+   :alt: Bitdeli badge
+   :target: https://bitdeli.com/free
+
 This is a starting template for Django website projects with `HTML5 Boilerplate <http://html5boilerplate.com>`__ integrated. To get started, create a ``virtualenv``, install Django, and then use Django's ``startproject`` command and specify the template (replace project_name with the name of your project) ::
 
     virtualenv project_name
@@ -45,10 +49,4 @@ To bootstrap the project::
     cd path/to/{{ project_name }}/repository
     pip install -r requirements.txt
     manage.py syncdb
-
-
-
-.. image:: https://d2weczhvl823v0.cloudfront.net/mike360/django-html5-boilerplate/trend.png
-   :alt: Bitdeli badge
-   :target: https://bitdeli.com/free
 
