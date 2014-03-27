@@ -33,13 +33,13 @@ The above command will work, but GitHub's automatic tarballing of a repository i
 ```
 git clone https://github.com/mike360/django-html5-boilerplate/
 django-admin.py startproject <project_name> --template=django-html5-boilerplate/
-```  
+```
 
 After creating the project you can boot up the development server right away:
 
 ```
 python manage.py runserver
-```                
+```
 
 Then open up your browser and go to [http://127.0.0.1:8000](http://127.0.0.1:8000) -- if all went well you should see the "Hello world!" page.
 
