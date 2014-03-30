@@ -4,12 +4,6 @@
 Django HTML5 Boilerplate
 ========================
 
-<<<<<<< HEAD
-.. image:: https://d2weczhvl823v0.cloudfront.net/mike360/django-html5-boilerplate/trend.png
-   :alt: Bitdeli badge
-   :target: https://bitdeli.com/free
-=======
-#TODO: add a link to Starting...
 This modification of Mike360's django-html5-boilerplate app incorporates
 certain 'best practices' from Jeff Knupp's tutorial "Starting a Django-1.6 Project
 the Right Way". The following modifications were made:
@@ -29,7 +23,6 @@ the Right Way". The following modifications were made:
      It is named test_project_name.py; you will hanve to rename it manually to
      test_(whatever your project_name is).
 
->>>>>>> djh5bp_with_Start_django_bestprax
 
 This is a starting template for Django website projects with `HTML5 Boilerplate <http://html5boilerplate.com>`__ integrated. To get started, create a ``virtualenv``, install Django, and then use Django's ``startproject`` command and specify the template (replace project_name with the name of your project) ::
 
@@ -53,10 +46,8 @@ A template for subsequent environments (e.g. staging, production) is included in
 
 This method of handling settings is great for the solo developer who needs to manage multiple deployment environments. It's ready out of the box to run well this way. When a project has multiple developers, each developer should maintain their own local settings file and exclude it from source control. This template can handle that with a couple of tweaks.
 
-<<<<<<< HEAD
 =======
 
->>>>>>> djh5bp_with_Start_django_bestprax
 .. note:: The text following this comment block will become the README.rst of the new project.
 
 -----
