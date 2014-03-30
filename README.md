@@ -43,7 +43,9 @@ python manage.py runserver
 
 Then open up your browser and go to [http://127.0.0.1:8000](http://127.0.0.1:8000) -- if all went well you should see the "Hello world!" page.
 
-Now you'll need to configure your database. Open up `settings/dev.py` and configure your local settings (database, etc.) I go into more detail about the way settings are handled in the Settings Module 
+Now you'll need to configure your database. Open up `settings/dev.py` and
+configure your local settings (database, etc.) I go into more detail about the
+way settings are handled in the Settings Module.
 
 ```python
 DATABASES = {
@@ -73,7 +75,7 @@ python manage.py runserver
 
 The Django Admin is automatically included with this project, so now you can head to [http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/) and log in using the credentials you created in the `syncdb` step.
 
-* * * 
+* * *
 
 ## The Settings Module
 
