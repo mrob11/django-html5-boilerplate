@@ -4,6 +4,7 @@
 Django HTML5 Boilerplate
 ========================
 
+#TODO: add a link to Starting a Django-1.6 Project...
 This modification of Mike360's django-html5-boilerplate app incorporates
 certain 'best practices' from Jeff Knupp's tutorial "Starting a Django-1.6 Project
 the Right Way". The following modifications were made:
