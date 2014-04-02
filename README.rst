@@ -4,7 +4,6 @@
 Django HTML5 Boilerplate
 ========================
 
-#TODO: add a link to Starting a Django-1.6 Project...
 This modification of Mike360's django-html5-boilerplate app incorporates
 certain 'best practices' from Jeff Knupp's tutorial "Starting a Django-1.6 Project
 the Right Way". The following modifications were made:
@@ -15,7 +14,6 @@ the Right Way". The following modifications were made:
    - INSTALLED_APPS was broken up into three app directories, for default,
      third-party and local apps, respectively.
 
-   #TODO: add links for fabric and south.
    - fabric and south were added into the third-party directory (although
      commented out, to allow them be synced properly). The south module is
      useful for data migrations, while the fabric module helps with deployment.
