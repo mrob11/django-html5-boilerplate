@@ -98,7 +98,7 @@ TEMPLATE_DIRS = (
     os.path.join(PROJECT_ROOT, 'templates'),
 )
 
-INSTALLED_APPS = (
+DEFAULT_APPS= (
     'django.contrib.admin',
     'django.contrib.admindocs',
     'django.contrib.auth',
@@ -108,6 +108,17 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
 )
+
+THIRD_PARTY_APPS = (#'south',
+                    #'fabric',
+                    )
+
+# apps made by you or members of your team
+LOCAL_APPS = ()
+
+# INSTALLED_APPS combines default, third_party and local apps
+INSTALLED_APPS = DEFAULT_APPS + THIRD_PARTY_APPS + LOCAL_APPS
+
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
