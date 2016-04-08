@@ -4,6 +4,8 @@
 Django HTML5 Boilerplate
 ========================
 
+**This project is no longer maintained. There are much better options out there now.**
+
 .. image:: https://d2weczhvl823v0.cloudfront.net/mike360/django-html5-boilerplate/trend.png
    :alt: Bitdeli badge
    :target: https://bitdeli.com/free
@@ -49,4 +51,3 @@ To bootstrap the project::
     cd path/to/{{ project_name }}/repository
     pip install -r requirements.txt
     manage.py syncdb
-
