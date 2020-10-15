@@ -51,3 +51,4 @@ To bootstrap the project::
     cd path/to/{{ project_name }}/repository
     pip install -r requirements.txt
     manage.py syncdb
+  ## THANK YOU
